@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>login</class>
+ <widget class="QDialog" name="login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1281</width>
+    <height>745</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Voltify</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="iconn.qrc">
+    <normaloff>:/ICON/iconPrincipale.jpg</normaloff>:/ICON/iconPrincipale.jpg</iconset>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1311</width>
+     <height>745</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>60</y>
+       <width>381</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+border: 3px dashed rgb(85, 170, 127);
+margin-top: 1ex; /* leave space at the top for the title */
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+
+QGroupBox::title {
+subcontrol-origin: margin;
+padding: 0 3px;
+
+}
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_loginid">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="loginemail">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>90</y>
+        <width>56</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+      </property>
+      <property name="text">
+       <string>ID:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="loginmdp">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>180</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+      </property>
+      <property name="text">
+       <string>Mot de pass:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_loginmdp">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>210</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_verifier">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>320</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Vérifier</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_oublie">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>300</y>
+        <width>221</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+
+border-radius:0px;
+
+border-width:0px;
+border-color:#9999aa;
+color:black;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+
+color:black;
+}
+
+QPushButton:pressed{
+
+color:white;
+}
+
+QPushButton:hover:!pressed{
+
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+
+color:#ffffff;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>J'ai oublié mon mot de pass</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>10</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI Black</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+qproperty-alignment:AlignCenter;
+color:rgb(66, 117, 102);
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Se connecter</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="llinededit">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>120</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: rgb(221,222,217);
+    border: 0px ;
+    border-radius: 0px;
+  
+}</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::NoEcho</enum>
+      </property>
+     </widget>
+     <zorder>llinededit</zorder>
+     <zorder>lineEdit_loginid</zorder>
+     <zorder>loginemail</zorder>
+     <zorder>loginmdp</zorder>
+     <zorder>lineEdit_loginmdp</zorder>
+     <zorder>pushButton_verifier</zorder>
+     <zorder>pushButton_oublie</zorder>
+     <zorder>label_3</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>50</y>
+       <width>381</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+border: 3px dashed rgb(85, 170, 127);
+margin-top: 1ex; /* leave space at the top for the title */
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+
+QGroupBox::title {
+subcontrol-origin: margin;
+padding: 0 3px;
+
+}
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLineEdit" name="emailenvoie">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="loginemail_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>140</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+      </property>
+      <property name="text">
+       <string>Entrer Mail</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="envoyeremail">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>270</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Envoyer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>20</y>
+        <width>281</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI Black</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+qproperty-alignment:AlignCenter;
+color:rgb(66, 117, 102);
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Oublier Mot de pass</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="pass">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>48</y>
+       <width>356</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background: rgb(221,222,217);
+    border: 0px ;
+    border-radius: 0px;
+  
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="uname">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>20</y>
+       <width>356</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background: rgb(221,222,217);
+    border: 0px ;
+    border-radius: 0px;
+  
+}</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="iconn.qrc"/>
+ </resources>
+ <connections/>
+</ui>

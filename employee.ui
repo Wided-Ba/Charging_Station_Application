@@ -1,0 +1,2856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>employee</class>
+ <widget class="QDialog" name="employee">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1231</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1231</width>
+       <height>720</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+    position: absolute;
+    top: -0.5em;
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar not QTabWidget */
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Afficher employé</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>460</y>
+         <width>411</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+border: 3px dashed rgb(85, 170, 127);
+margin-top: 1ex; /* leave space at the top for the title */
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+
+QGroupBox::title {
+subcontrol-origin: margin;
+padding: 0 3px;
+
+}
+</string>
+       </property>
+       <property name="title">
+        <string>Fonctionnalités</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_supprimer">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>160</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_supprimertab">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>100</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Supprimer tout</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_statut_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>160</y>
+          <width>191</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QComboBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QComboBox::hover {
+background: #d0d0d0;
+}
+
+QComboBox::pressed {
+background: #c8c8c8;
+}
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_PDF">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>50</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Générer PDF</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>30</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/ICON/331585408_556456159849722_8965214278401908655_n.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>90</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/ICON/corbeille.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QTableView" name="tableView">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>51</y>
+         <width>1091</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QHeaderView::section {
+	font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+	color:rgb(66,117,102);
+    padding: 4px;
+    border-style: solid ;
+    border-bottom: 2px solid rgb(85, 170, 127) ;
+    border-right: 2px solid rgb(85, 170, 127) ;
+}
+QScrollBar:horizontal {
+    border: 2px solid grey;
+    background: #3f7265;
+    height: 15px;
+    margin: 0px 20px 0 20px;
+}
+QScrollBar::handle:horizontal {
+    background:rgb(238, 238, 238);
+    min-width: 20px;
+}
+QScrollBar::add-line:horizontal {
+    border: 2px solid grey;
+    background: #3f7265;
+    width: 20px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    border: 2px solid grey;
+    background: #3f7265;
+    width: 20px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QTableView {
+
+    border: 3px solid rgb(85, 170, 127);
+    inner-border: 3px dashed rgb(85, 170, 127);
+    margin-top: 1ex; /* leave space at the top for the title */
+font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Employés</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>1000</x>
+         <y>10</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/ICON/331307335_580804193677575_966179827642562636_n.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QTableView" name="tableView_employe2">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>150</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>440</y>
+         <width>371</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+border: 3px dashed rgb(85, 170, 127);
+margin-top: 1ex; /* leave space at the top for the title */
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+
+QGroupBox::title {
+subcontrol-origin: margin;
+padding: 0 3px;
+
+}
+</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QPushButton" name="pushButton_PDF_2">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>0</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Employé du mois</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="employename">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>220</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="iconn.qrc">:/ICON/confettis.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>20</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="iconn.qrc">:/ICON/confettis.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_23">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>190</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="iconn.qrc">:/ICON/confettis.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="iconn.qrc">:/ICON/confettis.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_image">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>40</y>
+          <width>231</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+border-radius:10px;
+border-style:solid;
+border-width:5px;
+border-color:rgb(66, 117, 102);
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <zorder>pushButton_PDF_2</zorder>
+       <zorder>label_21</zorder>
+       <zorder>label_22</zorder>
+       <zorder>label_23</zorder>
+       <zorder>label_24</zorder>
+       <zorder>label_image</zorder>
+       <zorder>employename</zorder>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_rechercher">
+       <property name="geometry">
+        <rect>
+         <x>1010</x>
+         <y>17</y>
+         <width>100</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border-radius:13px;
+border-style:solid;
+border-width:0px;
+border-color:#aaaaa;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}</string>
+       </property>
+      </widget>
+      <zorder>tableView_employe2</zorder>
+      <zorder>groupBox</zorder>
+      <zorder>tableView</zorder>
+      <zorder>label_13</zorder>
+      <zorder>label_19</zorder>
+      <zorder>groupBox_2</zorder>
+      <zorder>lineEdit_rechercher</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Ajouter employé</string>
+      </attribute>
+      <widget class="QLineEdit" name="lineEdit_tel">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>40</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_conf_mdp">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>280</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_cin">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>200</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_prenom">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>120</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_nom">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>40</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_mdp">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>200</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_email">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>120</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>20</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>100</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Prénom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>180</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>CIN</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>260</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Sexe</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>20</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Numéro de Téléphone</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>100</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Email</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>180</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Mot de passe</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>340</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Date de naissance</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>260</y>
+         <width>191</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Confirmer mot de passe</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>410</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>340</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Salaire</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>420</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Statut</string>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_DDN">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>360</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+
+QDateEdit::up-button {
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-style: solid;
+subcontrol-position: top right;
+border-down-width: 1px;
+border-left-width: 1px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDateEdit::down-button {
+subcontrol-position: bottom right;
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-width: 1px;
+border-up-width: 1px;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDateEdit::up-button:hover, QDateEdit::down-button:hover {
+background-color: #F0F0F0;
+}
+
+
+QDateEdit::up-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDateEdit::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDateEdit::hover {
+background: #d0d0d0;
+}
+QDateEdit::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_salaire">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>360</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+
+QDoubleSpinBox::up-button {
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-style: solid;
+subcontrol-position: top right;
+border-down-width: 1px;
+border-left-width: 1px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDoubleSpinBox::down-button {
+subcontrol-position: bottom right;
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-width: 1px;
+border-up-width: 1px;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDoubleSpinBox::up-button:hover, QDateEdit::down-button:hover {
+background-color: #F0F0F0;
+}
+
+
+QDoubleSpinBox::up-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDoubleSpinBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDoubleSpinBox::hover {
+background: #d0d0d0;
+}
+QDoubleSpinBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_statut">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>440</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QComboBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QComboBox::hover {
+background: #d0d0d0;
+}
+
+QComboBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Gerant</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du Cafe</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du Lavage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du maintenance</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="comboBox_sexe">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>280</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QComboBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QComboBox::hover {
+background: #d0d0d0;
+}
+
+QComboBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Femme</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Homme</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Ajouter">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>550</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Valider</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Annuler">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>550</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_image">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>440</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QLineEdit {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+background: #d0d0d0;
+}
+
+QLinetEdit::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_nom_2">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>450</y>
+         <width>16</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: rgb(221,222,217);
+    border: 0px ;
+    border-radius: 0px;
+  
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::NoEcho</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>180</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Minuscule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>220</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Chiffres</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>200</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Majuscule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="one">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>180</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="two">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>200</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="three">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>220</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="toolButton">
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>440</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QToolButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QToolButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QToolButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QToolButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+      <zorder>lineEdit_nom_2</zorder>
+      <zorder>lineEdit_tel</zorder>
+      <zorder>lineEdit_conf_mdp</zorder>
+      <zorder>lineEdit_cin</zorder>
+      <zorder>lineEdit_prenom</zorder>
+      <zorder>lineEdit_nom</zorder>
+      <zorder>lineEdit_mdp</zorder>
+      <zorder>lineEdit_email</zorder>
+      <zorder>label</zorder>
+      <zorder>label_2</zorder>
+      <zorder>label_3</zorder>
+      <zorder>label_4</zorder>
+      <zorder>label_5</zorder>
+      <zorder>label_6</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_8</zorder>
+      <zorder>label_9</zorder>
+      <zorder>label_10</zorder>
+      <zorder>label_11</zorder>
+      <zorder>label_12</zorder>
+      <zorder>dateEdit_DDN</zorder>
+      <zorder>doubleSpinBox_salaire</zorder>
+      <zorder>comboBox_statut</zorder>
+      <zorder>comboBox_sexe</zorder>
+      <zorder>pushButton_Ajouter</zorder>
+      <zorder>pushButton_Annuler</zorder>
+      <zorder>lineEdit_image</zorder>
+      <zorder>label_16</zorder>
+      <zorder>label_17</zorder>
+      <zorder>label_18</zorder>
+      <zorder>one</zorder>
+      <zorder>two</zorder>
+      <zorder>three</zorder>
+      <zorder>toolButton</zorder>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Modifier employé</string>
+      </attribute>
+      <widget class="QLineEdit" name="lineEdit_modtel">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>130</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modconf_mdp">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>370</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modimiage">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>450</y>
+         <width>271</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modprenom">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>210</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modemail">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>210</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_modsalaire">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>370</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+
+QDoubleSpinBox::up-button {
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-style: solid;
+subcontrol-position: top right;
+border-down-width: 1px;
+border-left-width: 1px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDoubleSpinBox::down-button {
+subcontrol-position: bottom right;
+subcontrol-origin: padding;
+border-left-color: gray;
+width: 20px;
+border-left-width: 1px;
+border-up-width: 1px;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+}
+
+QDoubleSpinBox::up-button:hover, QDateEdit::down-button:hover {
+background-color: #F0F0F0;
+}
+
+
+QDoubleSpinBox::up-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDoubleSpinBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+
+QDoubleSpinBox::hover {
+background: #d0d0d0;
+}
+QDoubleSpinBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modmdp">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>290</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_modstatut">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>450</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QComboBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QComboBox::hover {
+background: #d0d0d0;
+}
+
+QComboBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Gerant</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du Cafe</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du Lavage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employe du maintenance</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>350</y>
+         <width>191</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Confirmer mot de passe</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>350</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Salaire</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>190</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Email</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>110</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Numéro de Téléphone</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>270</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Mot de passe</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>420</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>110</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>190</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Prénom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>430</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;}
+</string>
+       </property>
+       <property name="text">
+        <string>Statut</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>270</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>CIN</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Modifier">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>540</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Valider</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Annuler_3">
+       <property name="geometry">
+        <rect>
+         <x>650</x>
+         <y>540</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QPushButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QPushButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QPushButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QPushButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modnom">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>130</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+QLineEdit::down-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: gray transparent transparent transparent;
+}
+QLineEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QLineEdit::hover {
+    background: #d0d0d0;
+}
+
+QLineEdit::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>290</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 18px 1px 3px;
+}
+
+QLabel::hover {
+    background: #d0d0d0;
+}
+
+QLabel::pressed {
+    background: #c8c8c8;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_statut_3">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>50</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+stop:0 #E1E1E1, stop: 0.4 #DDDDDD,
+stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+border: 1px solid gray;
+border-radius: 5px;
+padding: 1px 18px 1px 3px;
+}
+QComboBox::down-arrow {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: gray transparent transparent transparent;
+}
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: gray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f0f0, stop: 1 #d8d8d8);
+
+}
+QComboBox::hover {
+background: #d0d0d0;
+}
+
+QComboBox::pressed {
+background: #c8c8c8;
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="toolButtonmodif">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>450</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton{
+background: rgb(66, 117, 102);
+border-radius:10px;
+border-style:solid;
+border-width:2px;
+border-color:#9999aa;
+color:white;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+font-weight: bold;
+}
+QToolButton:enabled{
+background-color: rgb(66, 117, 102);
+color:white;
+}
+
+QToolButton:pressed{
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0.0342727, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:#fffffe;
+}
+
+QToolButton:hover:!pressed{
+background-color: rgb(221,222,217);
+color:#0c2f70;
+}
+
+QToolButton:disabled{
+background-color:rgb(66, 117, 102);
+color:#ffffff;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="one_3">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>270</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_69">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>290</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Majuscule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_70">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>270</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Minuscule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="two_3">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>290</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_71">
+       <property name="geometry">
+        <rect>
+         <x>1020</x>
+         <y>310</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Chiffres</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="three_3">
+       <property name="geometry">
+        <rect>
+         <x>990</x>
+         <y>310</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>290</y>
+         <width>21</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <zorder>lineEdit</zorder>
+      <zorder>lineEdit_modtel</zorder>
+      <zorder>lineEdit_modconf_mdp</zorder>
+      <zorder>lineEdit_modimiage</zorder>
+      <zorder>lineEdit_modprenom</zorder>
+      <zorder>lineEdit_modemail</zorder>
+      <zorder>doubleSpinBox_modsalaire</zorder>
+      <zorder>lineEdit_modmdp</zorder>
+      <zorder>comboBox_modstatut</zorder>
+      <zorder>label_26</zorder>
+      <zorder>label_28</zorder>
+      <zorder>label_29</zorder>
+      <zorder>label_30</zorder>
+      <zorder>label_32</zorder>
+      <zorder>label_33</zorder>
+      <zorder>label_34</zorder>
+      <zorder>label_35</zorder>
+      <zorder>label_36</zorder>
+      <zorder>label_25</zorder>
+      <zorder>pushButton_Modifier</zorder>
+      <zorder>pushButton_Annuler_3</zorder>
+      <zorder>lineEdit_modnom</zorder>
+      <zorder>label_27</zorder>
+      <zorder>comboBox_statut_3</zorder>
+      <zorder>toolButtonmodif</zorder>
+      <zorder>one_3</zorder>
+      <zorder>label_69</zorder>
+      <zorder>label_70</zorder>
+      <zorder>two_3</zorder>
+      <zorder>label_71</zorder>
+      <zorder>three_3</zorder>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="iconn.qrc"/>
+ </resources>
+ <connections/>
+</ui>

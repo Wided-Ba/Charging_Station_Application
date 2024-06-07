@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>ICON/278261042_5242060219164606_8744602465667434102_n.png</file>
+        <file>ICON/278717090_465620745314700_6179097996270868039_n.png</file>
+        <file>ICON/331021796_4060633687495639_3024885960259443867_n.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>ICON/326132086_1377220566362323_2334973245028434171_n.png</file>
+        <file>ICON/326253185_1247096072879450_2122464190835713788_n.png</file>
+        <file>ICON/326421902_3390623604598503_20181722436645681_n.png</file>
+        <file>ICON/326255698_1163241431028162_7304178811197381155_n.png</file>
+        <file>ICON/profil.png</file>
+        <file>../../Desktop/image/photo2.jpg</file>
+        <file>../../Downloads/331585408_556456159849722_8965214278401908655_n (1).png</file>
+        <file>../../Downloads/331430109_901253524357909_6677201790829374939_n.png</file>
+        <file>../../Downloads/recherche-a-la-loupe.png</file>
+    </qresource>
+</RCC>
